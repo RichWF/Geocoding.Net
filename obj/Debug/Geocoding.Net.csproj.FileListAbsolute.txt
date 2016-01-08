@@ -8,3 +8,4 @@ D:\地理位置类库\Geocoding.Net\Geocoding.Net\obj\Debug\Geocoding.Net.dll
 D:\地理位置类库\Geocoding.Net\Geocoding.Net\obj\Debug\Geocoding.Net.pdb
 D:\地理位置类库\Geocoding.Net\Geocoding.Net\bin\Debug\Geocoding.Net.dll
 D:\地理位置类库\Geocoding.Net\Geocoding.Net\bin\Debug\Geocoding.Net.pdb
+D:\地理位置类库\Geocoding.Net\Geocoding.Net\bin\Debug\Newtonsoft.Json.dll

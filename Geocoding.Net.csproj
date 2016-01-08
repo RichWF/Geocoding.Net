@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,10 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Baidu\BaiduGeoLocation.cs" />
+    <Compile Include="Baidu\BaiduLocation.cs" />
+    <Compile Include="Baidu\BaiduLocations.cs" />
     <Compile Include="Gaode\GaodeGeoLocation.cs" />
+    <Compile Include="GeoLocationFactory.cs" />
+    <Compile Include="GetHelper.cs" />
     <Compile Include="Google\GoogleGeoLocation.cs" />
     <Compile Include="IGeoLocation.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="GeoType.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

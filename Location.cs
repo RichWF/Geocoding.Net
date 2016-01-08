@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Geocoding.Net
 {
-    class Location
+   public class Location
     {
         /// <summary>
         /// 城市
@@ -35,5 +35,38 @@ namespace Geocoding.Net
         /// 地区编码
         /// </summary>
         public int CountryCode { get; set; }
+
+
+
+        public Location() { }
+
+
+        public Location(string city, string country, string district, string province)
+            : this(city, country, district, province, string.Empty)
+        {
+
+        }
+
+        public Location(string city, string country, string district, string province, string street)
+            : this(city, country, district, province, street, string.Empty)
+        { }
+
+        public Location(string city, string country, string district, string province, string street,
+            string streetNumber)
+            : this(city, country, district, province, street, streetNumber, 0)
+        { }
+
+        public Location(string city, string country, string district, string province, string street,
+            string streetNumber, int countryCode)
+        {
+            this.City = city;
+            this.Country = country;
+            this.District = district;
+            this.Province = province;
+            this.Street = street;
+            this.StreetNumber = streetNumber;
+            this.CountryCode = countryCode;
+        }
+
     }
 }
