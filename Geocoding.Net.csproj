@@ -46,6 +46,8 @@
     <Compile Include="Baidu\BaiduLocation.cs" />
     <Compile Include="Baidu\BaiduLocations.cs" />
     <Compile Include="Gaode\GaodeGeoLocation.cs" />
+    <Compile Include="Gaode\GaodeLocation.cs" />
+    <Compile Include="Gaode\GaodeLocations.cs" />
     <Compile Include="GeoLocationFactory.cs" />
     <Compile Include="GetHelper.cs" />
     <Compile Include="Google\GoogleGeoLocation.cs" />

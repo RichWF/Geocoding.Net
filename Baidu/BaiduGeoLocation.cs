@@ -21,6 +21,7 @@ namespace Geocoding.Net.Baidu
             {
                 addressComponent address = bdLocation.result.addressComponent;
                 Location location = new Location(
+                    bdLocation.result.formatted_address,
                     address.city,
                     address.country,
                     address.district,

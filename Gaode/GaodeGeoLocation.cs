@@ -14,7 +14,24 @@ namespace Geocoding.Net.Gaode
         /// <returns></returns>
         public override Location GeoLocationByLngLat(Point point)
         {
-            return null;
+            GaodeLocation gdlocation = GaodeLocations.GetGaodeLocationByLngLat(point);
+            if (gdlocation.status == "999")
+                return null;
+            else
+            {
+                AddressComponent address = gdlocation.regeocode.addressComponent;
+                Location location = new Location(
+                    gdlocation.regeocode.formatted_address,
+                    address.city,
+                    "中国",
+                    address.district,
+                    address.province,
+                    address.township,
+                    address.adcode
+                    );
+                return location;
+            }
+
         }
     }
 }

@@ -7,6 +7,10 @@ namespace Geocoding.Net
 {
    public class Location
     {
+       /// <summary>
+        /// 结构化地址信息包括：省+市+区+乡镇+街道+门牌号
+       /// </summary>
+       public string FormattedAddress { get; set; }
         /// <summary>
         /// 城市
         /// </summary>
@@ -41,24 +45,25 @@ namespace Geocoding.Net
         public Location() { }
 
 
-        public Location(string city, string country, string district, string province)
-            : this(city, country, district, province, string.Empty)
+        public Location(string formattedAddress, string city, string country, string district, string province)
+            : this(formattedAddress, city, country, district, province, string.Empty)
         {
 
         }
 
-        public Location(string city, string country, string district, string province, string street)
-            : this(city, country, district, province, street, string.Empty)
+        public Location(string formattedAddress, string city, string country, string district, string province, string street)
+            : this(formattedAddress, city, country, district, province, street, string.Empty)
         { }
 
-        public Location(string city, string country, string district, string province, string street,
+        public Location(string formattedAddress, string city, string country, string district, string province, string street,
             string streetNumber)
-            : this(city, country, district, province, street, streetNumber, 0)
+            : this(formattedAddress, city, country, district, province, street, streetNumber, 0)
         { }
 
-        public Location(string city, string country, string district, string province, string street,
+        public Location(string formattedAddress,string city, string country, string district, string province, string street,
             string streetNumber, int countryCode)
         {
+            this.FormattedAddress = formattedAddress;
             this.City = city;
             this.Country = country;
             this.District = district;
