@@ -9,6 +9,11 @@ namespace Geocoding.Net.Gaode
     {
         public static string apiUrl = "http://restapi.amap.com/v3/geocode/regeo?output=json&location={0}&key=eb24db11efa9de4e6e07689e6847fa57&radius=1&extensions=base";
 
+        /// <summary>
+        /// 根据经纬度反编译出位置信息
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
         public static GaodeLocation GetGaodeLocationByLngLat(Point point)
         {
             string url = string.Format(apiUrl, point.Longitude + "," + point.Latitude);

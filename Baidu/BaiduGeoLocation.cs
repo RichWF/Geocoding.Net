@@ -15,7 +15,7 @@ namespace Geocoding.Net.Baidu
         public override Location GeoLocationByLngLat(Point point)
         {
             BaiduLocation bdLocation = BaiduLocations.GetBaiduLocationByLngLat(point);
-            if (bdLocation.status == 999)
+            if (bdLocation.status!=0)
                 return null;
             else
             {
@@ -32,6 +32,24 @@ namespace Geocoding.Net.Baidu
                     );
                 return location;
             }
+        }
+        /// <summary>
+        /// 根据位置信息编译出经纬度
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public override Point GeoPointByLocation(string location)
+        {
+            BaiduPoint bdPoint = BaiduPoints.GetBaiduLngLatByLocation(location);
+            if (bdPoint.status != 0)
+                return null;
+            else
+            {
+                BaiduPointLocation bdloction = bdPoint.result.location;
+                Point point = new Point(bdloction.lng,bdloction.lat);
+                return point;
+            }
+
         }
     }
 }

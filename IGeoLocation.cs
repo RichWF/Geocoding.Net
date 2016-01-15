@@ -12,7 +12,18 @@ namespace Geocoding.Net
         /// </summary>
         /// <param name="point"></param>
         /// <returns></returns>
-        public virtual Location GeoLocationByLngLat(Point point) {
+        public virtual Location GeoLocationByLngLat(Point point)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// 根据位置信息编译出经纬度
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public virtual Point GeoPointByLocation(string location)
+        {
             return null;
         }
     }

@@ -16,5 +16,10 @@ namespace Geocoding.Net.Google
         {
             return null;
         }
+
+        public override Point GeoPointByLocation(string location)
+        {
+            return base.GeoPointByLocation(location);
+        }
     }
 }

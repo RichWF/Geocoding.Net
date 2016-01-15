@@ -15,7 +15,7 @@ namespace Geocoding.Net.Gaode
         public override Location GeoLocationByLngLat(Point point)
         {
             GaodeLocation gdlocation = GaodeLocations.GetGaodeLocationByLngLat(point);
-            if (gdlocation.status == "999")
+            if (gdlocation.status != "0")
                 return null;
             else
             {
@@ -32,6 +32,24 @@ namespace Geocoding.Net.Gaode
                 return location;
             }
 
+        }
+        /// <summary>
+        /// 根据位置信息编译出经纬度
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public override Point GeoPointByLocation(string location)
+        {
+            GaodePoint gdPoint = GaodePoints.GetGaodeLngLatByLocation(location);
+            if (gdPoint.status != "0")
+                return null;
+            else
+            {
+                GaodeGeocode gdGeoCode = gdPoint.geocodes[0];
+                string[] points = gdGeoCode.location.Split(',');
+                Point point = new Point(Convert.ToDouble(points[0]), Convert.ToDouble(points[1]));
+                return point;
+            }
         }
     }
 }

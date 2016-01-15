@@ -45,9 +45,13 @@
     <Compile Include="Baidu\BaiduGeoLocation.cs" />
     <Compile Include="Baidu\BaiduLocation.cs" />
     <Compile Include="Baidu\BaiduLocations.cs" />
+    <Compile Include="Baidu\BaiduPoint.cs" />
+    <Compile Include="Baidu\BaiduPoints.cs" />
     <Compile Include="Gaode\GaodeGeoLocation.cs" />
     <Compile Include="Gaode\GaodeLocation.cs" />
     <Compile Include="Gaode\GaodeLocations.cs" />
+    <Compile Include="Gaode\GaodePoint.cs" />
+    <Compile Include="Gaode\GaodePoints.cs" />
     <Compile Include="GeoLocationFactory.cs" />
     <Compile Include="GetHelper.cs" />
     <Compile Include="Google\GoogleGeoLocation.cs" />
