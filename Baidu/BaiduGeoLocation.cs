@@ -15,22 +15,29 @@ namespace Geocoding.Net.Baidu
         public override Location GeoLocationByLngLat(Point point)
         {
             BaiduLocation bdLocation = BaiduLocations.GetBaiduLocationByLngLat(point);
-            if (bdLocation.status!=0)
-                return null;
+            if (bdLocation != null)
+            {
+                if (bdLocation.status != 0)
+                    return null;
+                else
+                {
+                    addressComponent address = bdLocation.result.addressComponent;
+                    Location location = new Location(
+                        bdLocation.result.formatted_address,
+                        address.city,
+                        address.country,
+                        address.district,
+                        address.province,
+                        address.street,
+                        address.street_number,
+                        address.country_code
+                        );
+                    return location;
+                }
+            }
             else
             {
-                addressComponent address = bdLocation.result.addressComponent;
-                Location location = new Location(
-                    bdLocation.result.formatted_address,
-                    address.city,
-                    address.country,
-                    address.district,
-                    address.province,
-                    address.street,
-                    address.street_number,
-                    address.country_code
-                    );
-                return location;
+                return null;
             }
         }
         /// <summary>
@@ -41,13 +48,20 @@ namespace Geocoding.Net.Baidu
         public override Point GeoPointByLocation(string location)
         {
             BaiduPoint bdPoint = BaiduPoints.GetBaiduLngLatByLocation(location);
-            if (bdPoint.status != 0)
-                return null;
+            if (bdPoint != null)
+            {
+                if (bdPoint.status != 0)
+                    return null;
+                else
+                {
+                    BaiduPointLocation bdloction = bdPoint.result.location;
+                    Point point = new Point(bdloction.lng, bdloction.lat);
+                    return point;
+                }
+            }
             else
             {
-                BaiduPointLocation bdloction = bdPoint.result.location;
-                Point point = new Point(bdloction.lng,bdloction.lat);
-                return point;
+                return null;
             }
 
         }

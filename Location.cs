@@ -39,8 +39,10 @@ namespace Geocoding.Net
         /// 地区编码
         /// </summary>
         public int CountryCode { get; set; }
-
-
+        /// <summary>
+        /// 道路名称
+        /// </summary>
+        public string RoadName { get; set; }
 
         public Location() { }
 
@@ -60,8 +62,14 @@ namespace Geocoding.Net
             : this(formattedAddress, city, country, district, province, street, streetNumber, 0)
         { }
 
-        public Location(string formattedAddress,string city, string country, string district, string province, string street,
+
+        public Location(string formattedAddress, string city, string country, string district, string province, string street,
             string streetNumber, int countryCode)
+            : this(formattedAddress, city, country, district, province, street, streetNumber, 0, string.Empty)
+        { }
+
+        public Location(string formattedAddress,string city, string country, string district, string province, string street,
+            string streetNumber, int countryCode,string roadName)
         {
             this.FormattedAddress = formattedAddress;
             this.City = city;
@@ -71,6 +79,7 @@ namespace Geocoding.Net
             this.Street = street;
             this.StreetNumber = streetNumber;
             this.CountryCode = countryCode;
+            this.RoadName = roadName;
         }
 
     }

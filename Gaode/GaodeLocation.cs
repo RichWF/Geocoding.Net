@@ -27,6 +27,8 @@ namespace Geocoding.Net.Gaode
         public string formatted_address { get; set; }
 
         public AddressComponent addressComponent { get; set; }
+
+        public List<Road> roads { get; set; }
     }
 
     public class AddressComponent
@@ -97,5 +99,22 @@ namespace Geocoding.Net.Gaode
         public string name { get; set; }
 
         public string id { get; set; }
+    }
+
+    /// <summary>
+    /// 道路信息
+    /// </summary>
+    public class Road
+    {
+        //道路id
+        public string id { get; set; }
+        //道路名称
+        public string name { get; set; }
+        //道路到请求坐标的距离
+        public string distance { get; set; }
+        //方位
+        public string direction { get; set; }
+        //坐标点
+        public string location { get; set; }
     }
 }

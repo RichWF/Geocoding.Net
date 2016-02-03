@@ -7,7 +7,7 @@ namespace Geocoding.Net.Gaode
 {
     public class GaodeLocations
     {
-        public static string apiUrl = "http://restapi.amap.com/v3/geocode/regeo?output=json&location={0}&key=eb24db11efa9de4e6e07689e6847fa57&radius=1&extensions=base";
+        public static string apiUrl = "http://restapi.amap.com/v3/geocode/regeo?output=json&location={0}&key=eb24db11efa9de4e6e07689e6847fa57&radius=1000&extensions=all";
 
         /// <summary>
         /// 根据经纬度反编译出位置信息
