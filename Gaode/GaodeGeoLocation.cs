@@ -18,7 +18,7 @@ namespace Geocoding.Net.Gaode
             GaodeLocation gdlocation = GaodeLocations.GetGaodeLocationByLngLat(point);
             if (gdlocation != null)
             {
-                if (gdlocation.status == "0")
+                if (gdlocation.status == "0" || gdlocation.status == "999")
                     return null;
                 else
                 {
